@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo&family=Roboto&display=swap');
+@import "variables";
+@import "mixins";
+
+body {
+    font-family: 'Heebo', sans-serif;
+}
+
+.pageHeading {
+    text-align: center;
+    font-size: $headingPrimary;
+    @include mQ(670px){
+        font-size: $phoneHeadingPrimary;
+    }
+}
+
+.main-container {
+    margin: 0 10%;
+}
+
+.main-section {
+    margin-top: 15px;
+    padding: 10px;
+    display: flex;
+    @include mQ(670px){
+        flex-direction: column;
+    }
+}
+
+.left-section  {
+    width: 50%;
+    img {
+        width: 100%;
+    }
+    h3 {
+        padding: 10px 0px;
+        font-size: $headingSecondary;
+    }
+    p {
+        font-size: $para;
+        color: $deepGrey
+    }
+
+    @include mQ(670px){
+        width: 100%;
+    }
+}
+
+.right-section {
+    width: 50%;
+    text-align: center;
+
+    @include mQ(670px){
+        width: 100%;
+    }
+}
+
+form {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10% 10%;
+
+    .input-field {
+        width: 100%;
+    }
+        
+    input, textarea {
+        margin: 5% 10%;
+        width: 100%;
+        font-size: $headingSecondary;
+        border: none;
+        border-bottom : 3px solid $deepGrey;
+        
+        &:focus {
+            outline: none;
+            border: none;
+            border-bottom: 3px solid $green;
+            border-radius: 10px;
+            transition: all 0.2s ease-in;
+            padding: 10px;
+        }
+
+        @include mQ(670px){
+            font-size: 1.5rem;
+            margin: 10% 0%;
+            width: 100%;
+            padding: 5px;
+        }
+
+    }
+
+}
+
+.btn {
+    margin-top: 10px;
+    width: 150px;
+    height: 50px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: $green;
+    font-size: 20px;
+    font-weight: bolder;
+    &:hover {
+        cursor: pointer;
+        background-color: darken($green, 30) ;
+        color: white;
+        transition: all 0.3s ease-in-out;
+    }
+
+    @include mQ(670px){
+        width: 100%;
+    }
+}
+
+.error {
+    display: inline;
+    color: red;
+    font-size: 10px;
+}
+
+.output {
+    text-align: left;
+    background-color: lighten($green, 30);
+    padding: 5%;
+    border-radius: 10px;
+}
